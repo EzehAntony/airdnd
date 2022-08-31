@@ -1,0 +1,44 @@
+.pc {
+  width: 25%;
+  min-width: 300px;
+  border-radius: 10px;
+  margin: 0 20px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.pc img {
+  width: 300px;
+  height: 300px;
+  user-select: none;
+  -webkit-user-drag: none;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.pc .caption {
+  font-weight: 600;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin: 20px 0;
+  height: 60px;
+}
+
+.pc .name {
+  font-size: 25px;
+  font-weight: 800;
+  font-family: cursive;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin: 10px 0;
+}
+
+.pc .place {
+  color: #222222;
+  font-size: 12px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
