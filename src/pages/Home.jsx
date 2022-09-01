@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useEffect } from "react";
 import PeopleCard from "../components/PeopleCard";
 import "./home.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Home() {
+  gsap.registerPlugin(ScrollTrigger);
   var [value, setValue] = useState(0);
 
   useEffect(() => {
@@ -59,17 +62,46 @@ function Home() {
     },
   ];
 
+  let hero = useRef("");
+  let header = useRef("");
+  let overlay = useRef("");
+  let heroTop = useRef("");
+  let heroBottom = useRef("");
+  let heroLeft = useRef("");
+  let heroRight = useRef("");
+
+  useEffect(() => {
+    gsap.to(heroTop, 0.8, { y: "-100%", opacity: 0 });
+    gsap.to(heroBottom, 0.8, { y: "100%", opacity: 0 });
+    gsap.to(overlay, 0.8, { display: "none" });
+    gsap.from(heroLeft, 0.8, { x: "-50%", opacity: 0, delay: 0.6 });
+    gsap.from(heroRight, 0.8, { x: "50%", opacity: 0, delay: 0.6 });
+    gsap.from(header, 0.8, {
+      y: "-80",
+      scrollTrigger: {
+        trigger: hero,
+        start: "bottom top",
+        scrub: 1,
+        markers: false,
+      },
+    });
+  }, []);
+
   return (
     <div className="homepage">
-      <div className="hero">
-        <header></header>
-        <div className="left">
+      <div className="hero" ref={(el) => (hero = el)}>
+        <div className="overlay" ref={(el) => (overlay = el)}>
+          <div ref={(e) => (heroTop = e)} className="top"></div>
+          <div ref={(e) => (heroBottom = e)} className="bottom"></div>
+        </div>
+        <header ref={(el) => (header = el)}></header>
+        <div className="left" ref={(el) => (heroLeft = el)}>
           <img src="/logo.svg" className="logo" alt="logo" />
           <h1>Open your door to hosting</h1>
 
           <button>Try hosting</button>
         </div>
-        <div className="right">
+        <div className="right" ref={(el) => (heroRight = el)}>
           <video src="/heroVideo.webm" loop autoPlay muted playsInline></video>
         </div>
       </div>
@@ -162,6 +194,57 @@ function Home() {
           <button>Let's go</button>
         </div>
       </div>
+
+      <footer>
+        <div className="firstFooter">
+          <div className="support">
+            <h1>Support</h1>
+            <li>Help Center</li>
+            <li>Supporting people with disabilities</li>
+            <li>Report a neighborhood concern</li>
+            <li>AirCover</li>
+            <li>Cancellation options</li>
+            <li>Safety information</li>
+            <li>Our COVID-19 Response</li>
+          </div>
+          <div className="community">
+            <h1>Community</h1>
+            <li>Help Center</li>
+            <li>Supporting people with disabilities</li>
+            <li>Report a neighborhood concern</li>
+            <li>AirCover</li>
+            <li>Cancellation options</li>
+            <li>Safety information</li>
+            <li>Our COVID-19 Response</li>
+          </div>
+          <div className="hosting">
+            <h1>Hosting</h1>
+            <li>Help Center</li>
+            <li>Supporting people with disabilities</li>
+            <li>Report a neighborhood concern</li>
+            <li>AirCover</li>
+            <li>Cancellation options</li>
+            <li>Safety information</li>
+            <li>Our COVID-19 Response</li>
+          </div>
+          <div className="airbnb">
+            <h1>Airbnb</h1>
+            <li>Help Center</li>
+            <li>Supporting people with disabilities</li>
+            <li>Report a neighborhood concern</li>
+            <li>AirCover</li>
+            <li>Cancellation options</li>
+            <li>Safety information</li>
+            <li>Our COVID-19 Response</li>
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="secondFooter">
+          © 2022 Airbnb, Inc. ·Privacy· Terms· Sitemap
+        </div>
+      </footer>
     </div>
   );
 }
