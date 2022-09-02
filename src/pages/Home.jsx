@@ -26,35 +26,35 @@ function Home() {
       place: "Host in Milan",
     },
     {
-      img: "/woman.jpg",
+      img: "/man.jpg",
       caption:
         "Hosting my home allowed me to become an entrepreneur and laid down a path to financial freedom.",
       name: "Darrel",
       place: "Host in Atlanta",
     },
     {
-      img: "/woman.jpg",
+      img: "/cooking.jpg",
       caption:
         "We’re able to keep our culture alive by hosting our pasta-making experience.",
       name: "Nerina",
       place: "Host in Palombara Sabina",
     },
     {
-      img: "/woman.jpg",
+      img: "/yellowgown.jpg",
       caption:
         "Airbnb has allowed me to create my own job doing what I love — taking care of guests in our home.",
       name: "Clair",
       place: "Host in Chiang Mia",
     },
     {
-      img: "/woman.jpg",
+      img: "/arabian.jpg",
       caption:
         "Hosting my bedouin tent has introduced me to people around the world.",
       name: "Mohammed",
       place: "Host in Wadi Rum",
     },
     {
-      img: "/woman.jpg",
+      img: "/marco.jpg",
       caption:
         "I love hosting my eco-home so people can connect with nature and their loved ones.",
       name: "Marko",
@@ -94,10 +94,24 @@ function Home() {
           <div ref={(e) => (heroTop = e)} className="top"></div>
           <div ref={(e) => (heroBottom = e)} className="bottom"></div>
         </div>
+
         <header ref={(el) => (header = el)}>
           <img src="/headerlogo.svg" className="logo" alt="" />
-          <div className="hRight"></div>
+          <div className="hRight">
+            <div className="headerRound">
+              <div className="images">
+                <img src="/man.jpg" alt="" />
+                <img src="/man.jpg" alt="" />
+                <img src="/man.jpg" alt="" />
+              </div>
+
+              <p>Ask a Superhost</p>
+            </div>
+
+            <button>Try hosting</button>
+          </div>
         </header>
+
         <div className="left" ref={(el) => (heroLeft = el)}>
           <img src="/logo.svg" className="logo" alt="logo" />
           <h1>Open your door to hosting</h1>
