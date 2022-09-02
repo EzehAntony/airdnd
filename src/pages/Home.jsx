@@ -94,7 +94,10 @@ function Home() {
           <div ref={(e) => (heroTop = e)} className="top"></div>
           <div ref={(e) => (heroBottom = e)} className="bottom"></div>
         </div>
-        <header ref={(el) => (header = el)}></header>
+        <header ref={(el) => (header = el)}>
+          <img src="/headerlogo.svg" className="logo" alt="" />
+          <div className="hRight"></div>
+        </header>
         <div className="left" ref={(el) => (heroLeft = el)}>
           <img src="/logo.svg" className="logo" alt="logo" />
           <h1>Open your door to hosting</h1>
