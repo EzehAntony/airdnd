@@ -134,7 +134,6 @@
 .homepage .hero .right {
   width: 50%;
   height: 100%;
-  background-color: green;
   position: relative;
 }
 
@@ -284,12 +283,12 @@
   background-repeat: no-repeat;
   margin: 0 0 40px 0;
   height: 50vh;
-  min-height: 700px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 600px;
 }
 
 .homepage .questions p {
@@ -477,4 +476,94 @@ footer .secondFooter {
   color: #222222;
   margin: 0 40px;
   font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+  .homepage .hero {
+    height: 400px;
+    background-position: center center;
+  }
+
+  .homepage .hero .left {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    height: 25%;
+    bottom: 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .homepage .hero .left h1 {
+    color: #222222;
+    font-size: 30px;
+    max-width: 300px;
+    text-align: left;
+    padding: 0 5%;
+  }
+
+  .homepage .hero .left button {
+    display: none;
+  }
+
+  .homepage .hero .right {
+    width: 100%;
+  }
+
+  .homepage .second {
+    align-items: flex-start;
+  }
+
+  .homepage .second h1 {
+    font-size: 25px;
+    text-align: left;
+    margin: 0 5%;
+    font-weight: 600;
+  }
+
+  .homepage .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .homepage .second .container .findOut:nth-of-type(1) {
+    width: 100%;
+  }
+  .homepage .second .container .findOut {
+    width: 47%;
+    margin: 20px 0;
+  }
+
+  .homepage .slider {
+    align-items: flex-start;
+    padding: 0 5%;
+  }
+
+  .homepage .slider h1 {
+    font-size: 25px;
+    text-align: left;
+    margin: 0 5%;
+    font-weight: 600;
+  }
+  .homepage .carousel {
+    width: 100%;
+  }
+
+  .homepage .questions {
+    width: 90%;
+    max-height: 350px;
+  }
+
+  .homepage .aircover {
+    width: 90%;
+    max-height: 350px;
+  }
 }

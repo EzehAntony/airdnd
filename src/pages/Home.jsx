@@ -149,11 +149,7 @@ function Home() {
             </h2>
           </div>
         </div>
-
-        <p>Tell us about your place</p>
       </div>
-
-      <div className="map"></div>
 
       <div className="slider">
         <h1>You can host anything anywhere</h1>
