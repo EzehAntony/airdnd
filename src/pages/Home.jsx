@@ -184,10 +184,9 @@ function Home() {
           </h3>
           <button>Learn more</button>
         </div>
-        <div
-          className="right
-        "
-        ></div>
+        <div className="right">
+
+        </div>
       </div>
 
       <div className="try">
